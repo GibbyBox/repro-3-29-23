@@ -2,9 +2,12 @@ import { Stack } from "expo-router";
 
 export default function ProfileLayout() {
 	return (
-		<Stack initialRouteName="profile/index" screenOptions={{ headerShown: false }}>
-			<Stack.Screen name="profile/index" />
-			<Stack.Screen name="profile/friends" />
-		</Stack>
+		<>
+			<Stack.Screen options={{ headerShown: false }} />
+			<Stack initialRouteName="profile/index">
+				<Stack.Screen name="profile/index" options={{ title: 'Profile' }} />
+				<Stack.Screen name="profile/friends" options={{ title: 'Friends via Profile' }} />
+			</Stack>
+		</>
 	)
 }
